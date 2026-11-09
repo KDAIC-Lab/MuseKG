@@ -91,6 +91,10 @@ files. Use a local path for fully offline evaluation. Remote model code is disab
 
 ## Run the local demo
 
+The KDAIC-Lab fork maintains the integrated research demo in [`demo/`](demo/README.md):
+chat, graph exploration, object details, optional local images and optional LLM answers.
+See the [demo guide](demo/README.md) for configuration and troubleshooting.
+
 ```bash
 MUSEKG_GRAPH_PATH=output/fictional_knowledge_graph.gexf \
   uvicorn demo.server:app --host 127.0.0.1 --port 8000
@@ -99,8 +103,8 @@ MUSEKG_GRAPH_PATH=output/fictional_knowledge_graph.gexf \
 Open <http://127.0.0.1:8000>. By default the demo uses deterministic answers and needs no
 GPU. To enable an optional local model, install the `model` extra and set `MUSEKG_MODEL`
 to a compatible Hugging Face model identifier. MuseKG does not enable remote model code.
-The graph visualisation loads a version-pinned Cytoscape.js bundle from jsDelivr, so that
-part of the interface needs an internet connection.
+The graph visualisation uses the included MIT-licensed Cytoscape.js 3.23.0 bundle,
+so the interface does not need a CDN connection.
 
 Do not expose a private graph through a public demo: responses, context, and visualised
 neighbourhoods can reveal the underlying records.

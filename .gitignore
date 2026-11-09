@@ -31,3 +31,16 @@ logs/
 triton/
 .cache/
 huggingface/
+
+# Local demo configuration, credentials and media
+*.pem
+*.key
+*.p12
+*.pfx
+.secrets/
+secrets/
+credentials*.json
+*token*.txt
+*.mp3
+*.mp4
+demo/local/
